@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- MATERIAL 3 APP BAR AND SEARCH TOOLBAR CONCEPT -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_search"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp">
+
+            <!-- Elegant Search card contained tightly in the Title space of Toolbar -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/search_card"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="12dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <ImageButton
+                        android:id="@+id/btn_search_submit"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_search"
+                        app:tint="?attr/colorPrimary"
+                        android:contentDescription="@string/fragment_map_desc_search_submit" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/search_input"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/fragment_map_hint_search_places"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <ImageButton
+                        android:id="@+id/btn_voice_search"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_mic"
+                        app:tint="?attr/colorPrimary"
+                        android:contentDescription="@string/fragment_map_desc_voice_search" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- CONTENT DISPLAY CONTAINER -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- MAP SEGMENT -->
+        <fragment
+            android:id="@+id/map_fragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- RIGHT ACTION WHEEL (Floating card menus for map tweaks) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="center">
+
+            <!-- Layer toggle button (Choose map layers) -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_map_layers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:fabSize="mini"
+                app:elevation="4dp"
+                app:backgroundTint="?attr/colorSurface"
+                app:iconTint="?attr/colorPrimary"
+                android:src="@drawable/ic_layers"
+                android:contentDescription="@string/fragment_map_desc_layers" />
+
+            <!-- Compass indicator check view -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_zoom_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:fabSize="mini"
+                app:elevation="4dp"
+                app:backgroundTint="?attr/colorSurface"
+                app:iconTint="?attr/colorPrimary"
+                android:src="@drawable/ic_mylocation"
+                android:contentDescription="@string/fragment_map_desc_zoom_current" />
+
+            <!-- Goto Selected Mock Location button -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_zoom_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:fabSize="mini"
+                app:elevation="4dp"
+                app:backgroundTint="?attr/colorSurface"
+                app:iconTint="?attr/colorPrimary"
+                android:src="@drawable/ic_directions"
+                android:contentDescription="@string/item_location_desc_select" />
+        </LinearLayout>
+
+        <!-- CONTAINER FOR BOTTOM CARDS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
+            <!-- ROUTE CREATION CONTROLS (Overlaid card at bottom area) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/route_control_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <!-- Route Info Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/txt_route_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/fragment_map_txt_active_route"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <ImageButton
+                            android:id="@+id/btn_route_close"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_close"
+                            android:contentDescription="@string/fragment_map_desc_close_route_edit"
+                            app:tint="?attr/colorOnSurfaceVariant" />
+                    </LinearLayout>
+
+                    <!-- Mode Selector walking cycling driving -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_mode_walk"
+                            style="@style/MaterialButtonElevated"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="@string/fragment_map_btn_walk"
+                            android:textSize="11sp" />
+
+                        <View android:layout_width="8dp" android:layout_height="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_mode_cycle"
+                            style="@style/MaterialButtonElevated"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="@string/fragment_map_btn_cycle"
+                            android:textSize="11sp" />
+
+                        <View android:layout_width="8dp" android:layout_height="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_mode_drive"
+                            style="@style/MaterialButtonElevated"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="@string/fragment_map_btn_drive"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txt_route_speed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/fragment_map_txt_current_speed"
+                        android:textSize="12sp"
+                        android:layout_margin="4dp" />
+
+                    <!-- Route controls buttons: Start, Pause, Resume, Stop, Repeat, Reverse -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/btn_route_play_pause"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/ic_play_arrow"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/fragment_map_desc_btn_play_pause"
+                            app:tint="?attr/colorPrimary" />
+
+                        <View android:layout_width="16dp" android:layout_height="0dp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_route_reverse"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/ic_invert"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/fragment_map_desc_btn_invert"
+                            app:tint="?attr/colorPrimary" />
+
+                        <View android:layout_width="16dp" android:layout_height="0dp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_route_repeat"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/ic_loop"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/fragment_map_desc_btn_repeat"
+                            app:tint="?attr/colorPrimary" />
+                        
+                        <View android:layout_width="16dp" android:layout_height="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_route_clear"
+                            style="@style/MaterialButtonSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:text="@string/fragment_map_btn_clear_route"
+                            android:textColor="?attr/colorError" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- LOCATION DETAILS INFO CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/location_info_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="?attr/colorPrimaryContainer"
+                app:cardBackgroundColor="?attr/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Title & Favorite Star Button -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_selected_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fragment_map_txt_select_spot_hint"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_toStartOf="@+id/btn_favorite_star"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true" />
+
+                        <ImageButton
+                            android:id="@+id/btn_favorite_star"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_star_outline"
+                            android:contentDescription="@string/fragment_map_desc_favorite_star"
+                            app:tint="?attr/colorPrimary" />
+                    </RelativeLayout>
+
+                    <!-- Original / Selected details grid -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="6dp">
+
+                        <!-- Selected Coordinates row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_map"
+                                app:tint="?attr/colorPrimary" />
+                            <TextView
+                                android:id="@+id/txt_selected_coords"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@string/fragment_map_txt_mock_no_selection"
+                                android:textSize="12sp"
+                                android:textColor="?attr/colorOnSurface" />
+                        </LinearLayout>
+
+                        <!-- Original Coordinates row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="4dp">
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_mylocation"
+                                app:tint="?attr/colorOnSurfaceVariant" />
+                            <TextView
+                                android:id="@+id/txt_original_coords"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@string/fragment_map_txt_original_detecting"
+                                android:textSize="12sp"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Starred status / info tip -->
+                    <TextView
+                        android:id="@+id/txt_location_info_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/fragment_map_txt_map_instructions"
+                        android:textSize="10sp"
+                        android:textColor="?attr/colorOutline" />
+
+                    <!-- Core operational button inside card -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_card_start_stop"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/fragment_map_btn_start_mocking"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="16dp"
+                        app:icon="@drawable/ic_play_arrow"
+                        app:iconSize="18dp"
+                        app:iconGravity="textStart" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

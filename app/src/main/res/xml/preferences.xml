@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/pref_cat_theme">
+        <Preference
+            app:key="selected_theme"
+            app:title="@string/pref_title_theme"
+            android:icon="@drawable/ic_palette"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_theme" />
+
+        <SwitchPreferenceCompat
+            app:key="dynamic_colors"
+            app:title="@string/pref_title_dynamic_colors"
+            android:icon="@drawable/ic_wallpaper"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_dynamic_colors"
+            app:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/pref_cat_map_interface">
+        <Preference
+            app:key="selected_map_style"
+            app:title="@string/pref_title_map_style"
+            android:icon="@drawable/ic_map"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_map_style" />
+
+        <SwitchPreferenceCompat
+            app:key="keep_screen_on"
+            app:title="@string/pref_title_screen_awake"
+            android:icon="@drawable/ic_visibility"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_screen_awake"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="traffic_layer"
+            app:title="@string/pref_title_traffic"
+            android:icon="@drawable/ic_directions"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_traffic"
+            app:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            app:key="buildings_layer"
+            app:title="@string/pref_title_buildings"
+            android:icon="@drawable/ic_apartment"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_buildings"
+            app:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            app:key="compass_layer"
+            app:title="@string/pref_title_compass"
+            android:icon="@drawable/ic_explore"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_compass"
+            app:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/pref_cat_service">
+        <SwitchPreferenceCompat
+            app:key="auto_restore_last_location"
+            app:title="@string/pref_title_auto_restore"
+            android:icon="@drawable/ic_history"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_auto_restore"
+            app:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/pref_cat_dev">
+        <Preference
+            app:key="btn_dev_settings"
+            app:title="@string/pref_title_dev_opts"
+            android:icon="@drawable/ic_developer_mode"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_dev_opts" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/pref_cat_about">
+        <Preference
+            app:key="btn_about"
+            app:title="@string/pref_title_about"
+            android:icon="@drawable/ic_info"
+            app:iconTint="?attr/colorPrimary"
+            app:summary="@string/pref_summary_about" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

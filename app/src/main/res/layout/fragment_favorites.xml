@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- MATERIAL 3 APP BAR AND SEARCH TOOLBAR DESIGN -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/tab_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tab_toolbar_search"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp">
+
+            <!-- Identical unified Search card as Map layout -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tab_search_card"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="12dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <ImageButton
+                        android:id="@+id/btn_tab_search_submit"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_search"
+                        app:tint="?attr/colorPrimary"
+                        android:contentDescription="@string/fragment_favorites_desc_search_submit" />
+
+                    <EditText
+                        android:id="@+id/tab_search_input"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/fragment_favorites_hint_search"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:importantForAutofill="no" />
+
+                    <ImageButton
+                        android:id="@+id/btn_tab_voice_search"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_mic"
+                        app:tint="?attr/colorPrimary"
+                        android:contentDescription="@string/fragment_favorites_desc_voice_search" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- CONTENT SEGMENT FRAME (Padding matching general guidelines) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="8dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tab_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Empty indicator illustration -->
+        <LinearLayout
+            android:id="@+id/empty_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_star_outline"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:contentDescription="@string/fragment_favorites_desc_empty_indicator" />
+
+            <TextView
+                android:id="@+id/txt_empty_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/fragment_favorites_txt_empty"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOutline" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

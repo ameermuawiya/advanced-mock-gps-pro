@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App General Strings -->
+    <string name="app_name">Mock GPS Location</string>
+    <string name="title_map">Map</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_history">History</string>
+    <string name="title_settings">Settings</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_close">Close</string>
+    <string name="backup_toast_no_favorites">No favorites to export.</string>
+    <string name="backup_toast_no_history">No history logs to export.</string>
+    <string name="backup_toast_db_not_exist">Database file does not exist.</string>
+    <string name="backup_toast_backup_success">Database backed up to files folder: %s</string>
+    <string name="backup_toast_backup_failed">Backup failed: %s</string>
+    <string name="backup_toast_restore_not_found">No backup file found at: %s</string>
+    <string name="backup_toast_restore_success">Database restored successfully. Please restart the application.</string>
+    <string name="backup_toast_restore_failed">Restore failed: %s</string>
+    <string name="backup_toast_export_error">Export formatting error.</string>
+    <string name="backup_share_chooser_title">Share Export Details</string>
+
+    <!-- Tab names -->
+    <string name="tab_history">History Logs</string>
+    <string name="tab_favorites">Favorites</string>
+
+    <!-- Info labels -->
+    <string name="lbl_real_location">Real Location</string>
+    <string name="lbl_mock_location">Mock Location</string>
+    <string name="lbl_network_info">Network Information</string>
+    <string name="lbl_service_status">Service Status</string>
+
+    <!-- Location Sub-Labels -->
+    <string name="lbl_lat">Latitude:</string>
+    <string name="lbl_lng">Longitude:</string>
+    <string name="lbl_accuracy">Accuracy:</string>
+    <string name="lbl_altitude">Altitude:</string>
+    <string name="lbl_speed">Speed:</string>
+
+    <!-- Network Info Sub-Labels -->
+    <string name="lbl_ip">IP Address:</string>
+    <string name="lbl_carrier">Provider:</string>
+    <string name="lbl_region">Region / City:</string>
+    <string name="lbl_country">Country:</string>
+
+    <!-- ================================================================= -->
+    <!-- MainActivity Layout & Class Strings -->
+    <!-- ================================================================= -->
+    <!-- activity_main.xml -->
+    <string name="activity_main_toast_permissions_required">Tracking and notifications permission are required to mock GPS.</string>
+    <string name="activity_main_toast_service_enabled">Mock Location Service Enabled!</string>
+    <string name="activity_main_toast_settings_open_fail">System Settings could not be opened.</string>
+    <string name="activity_main_toast_provider_stopped">Mock Provider Stopped.</string>
+    <string name="dialog_dev_opts_title">Mock Provider Required</string>
+    <string name="dialog_dev_opts_message">Android requires this app to be set as the Mock location app under Developer Options to simulate GPS signals.\n\n1. Open Settings > About > Tap \'Build number\' 7 times.\n2. Go to Settings > Developer Options.\n3. Tap \'Select mock location app\' and choose \'Mock GPS Location\'.</string>
+    <string name="dialog_dev_opts_btn_open">Open Settings</string>
+    <string name="dialog_dev_opts_btn_cancel">Cancel</string>
+
+    <!-- ================================================================= -->
+    <!-- layout_joystick_overlay.xml Layout Strings -->
+    <!-- ================================================================= -->
+    <string name="layout_joystick_overlay_txt_handle_move"> Move Handle</string>
+    <string name="layout_joystick_overlay_txt_speed_preset">5 m/s</string>
+    <string name="layout_joystick_overlay_desc_close">Close widget</string>
+    <string name="layout_joystick_overlay_desc_toggle_size">Toggle size</string>
+    <string name="layout_joystick_overlay_desc_toggle_opacity">Toggle Opacity</string>
+    <string name="layout_joystick_overlay_desc_thumb">Joystick thumb</string>
+    <string name="layout_joystick_overlay_desc_speed_down">Speed down</string>
+    <string name="layout_joystick_overlay_desc_speed_up">Speed up</string>
+
+    <!-- ================================================================= -->
+    <!-- item_location.xml Layout Strings -->
+    <!-- ================================================================= -->
+    <string name="item_location_txt_default_city">San Franciso</string>
+    <string name="item_location_txt_default_coords">Lat: 37.774900, Lng: -122.419400</string>
+    <string name="item_location_txt_default_time">minutes ago</string>
+    <string name="item_location_desc_select">Select spot</string>
+    <string name="item_location_desc_favorite">Save to Favorites</string>
+    <string name="item_location_desc_edit">Edit info</string>
+    <string name="item_location_desc_delete">Delete</string>
+
+    <!-- ================================================================= -->
+    <!-- dialog_about_developer.xml Layout Strings -->
+    <!-- ================================================================= -->
+    <string name="dialog_about_developer_title">Mock GPS Location Suite</string>
+    <string name="dialog_about_developer_version">Version 3.0.0 Pro Suite</string>
+    <string name="dialog_about_developer_lbl_developed_by">Developed By</string>
+    <string name="dialog_about_developer_name">Amir Muawiya</string>
+    <string name="dialog_about_developer_lbl_purpose">Application Purpose</string>
+    <string name="dialog_about_developer_desc_purpose">Professional, high-performance mock location provider designed securely for QA experts, software engineers, and test automation tasks. Supports advanced path routing, responsive screen joysticks overlay, and secure offline-first local histories tracker.</string>
+    <string name="dialog_about_developer_privacy_info">No user tracking or cloud syncing. Fully secure, offline-first, and private.</string>
+
+    <!-- ================================================================= -->
+    <!-- fragment_map.xml Layout & Class Strings -->
+    <!-- ================================================================= -->
+    <string name="fragment_map_txt_active_route">Active Route: Simulating Path...</string>
+    <string name="fragment_map_btn_walk">Walk</string>
+    <string name="fragment_map_btn_cycle">Cycle</string>
+    <string name="fragment_map_btn_drive">Drive</string>
+    <string name="fragment_map_txt_current_speed">Current Speed: 5.0 m/s (18.0 km/h)</string>
+    <string name="fragment_map_btn_clear_route">Clear Route</string>
+    <string name="fragment_map_txt_select_spot_hint">Select mock spot (Long Press)</string>
+    <string name="fragment_map_txt_mock_no_selection">Mock: (Please long press on map to select)</string>
+    <string name="fragment_map_txt_original_detecting">Original: Detecting...</string>
+    <string name="fragment_map_txt_map_instructions">Long press anywhere on the map to select your custom mock location</string>
+    <string name="fragment_map_btn_start_mocking">Start Mocking</string>
+    <string name="fragment_map_btn_joystick">Joystick</string>
+    <string name="fragment_map_hint_search_places">Search places or coordinates...</string>
+    <string name="fragment_map_desc_search_submit">Execute Search Spot</string>
+    <string name="fragment_map_desc_voice_search">Voice inputs trigger search</string>
+    <string name="fragment_map_desc_layers">Select map satellite terrain normal</string>
+    <string name="fragment_map_desc_zoom_current">Fit center to selected spot</string>
+    <string name="fragment_map_desc_close_route_edit">Close routes editor</string>
+    <string name="fragment_map_desc_btn_play_pause">Play or Pause route simulation</string>
+    <string name="fragment_map_desc_btn_invert">Invert route direction</string>
+    <string name="fragment_map_desc_btn_repeat">Loop route repeat</string>
+    <string name="fragment_map_desc_favorite_star">Favorite location</string>
+
+    <!-- MapFragment Java Strings -->
+    <string name="map_fragment_toast_long_press_hint">Long Press on map to select and set mock spot coordinate.</string>
+    <string name="map_fragment_toast_starred_removed">Starred spot removed from Favorites.</string>
+    <string name="map_fragment_toast_starred_saved">Starred spot saved to Favorites!</string>
+    <string name="map_fragment_toast_voice_speech_unavailable">Speech Input is not available on this device.</string>
+    <string name="map_fragment_toast_empty_search">Please type coordinates or place name first.</string>
+    <string name="map_fragment_toast_geocoder_offline">Geocoder service is offline on this device.</string>
+    <string name="map_fragment_toast_geocoder_not_found">Could not locate: \"%s\"</string>
+    <string name="map_fragment_toast_geocoder_error">Geocoding server error. Try inputting raw coordinates.</string>
+    <string name="map_fragment_toast_address_opened">Opened: %s</string>
+    <string name="map_fragment_toast_centered_physical">Centered to physical self location.</string>
+    <string name="map_fragment_toast_signal_not_available">Real location signal not available yet. Try moving outside or checking settings.</string>
+    <string name="map_fragment_toast_permissions_not_granted">Location permissions not granted. Enable them first.</string>
+    <string name="map_fragment_toast_error_gps_sensor">Error getting physical GPS location sensor data.</string>
+    <string name="map_fragment_toast_style_updated">Map style updated to: %s</string>
+    <string name="map_fragment_toast_joystick_stopped">Floating Joystick overlay stopped.</string>
+    <string name="map_fragment_toast_start_mocking_first">Please Start location mocking provider first.</string>
+    <string name="map_fragment_toast_joystick_active">Floating Joystick widget active!</string>
+    <string name="map_fragment_toast_add_path_first">Add path segments on map by Long Press first.</string>
+    <string name="map_fragment_toast_enable_mock_first">Please enable/Start Mock Providers Service first.</string>
+    <string name="map_fragment_toast_simulation_paused">Route simulation paused.</string>
+    <string name="map_fragment_toast_initiating_routing">Initiating emulated routing track...</string>
+    <string name="map_fragment_toast_waypoint_added">Waypoint added to simulation track.</string>
+    <string name="map_fragment_speed_lbl">Current Speed: %1$s - %2$.1f m/s (%3$.1f km/h)</string>
+    <string name="map_fragment_speed_walk">Walk</string>
+    <string name="map_fragment_speed_cycle">Cycle</string>
+    <string name="map_fragment_speed_drive">Drive</string>
+    <string name="map_fragment_toast_repeat_on">Repeating enabled (looping)</string>
+    <string name="map_fragment_toast_repeat_off">Repeat disabled</string>
+    <string name="map_fragment_toast_reverse_on">Route direction reversing (pingpong)</string>
+    <string name="map_fragment_toast_reverse_off">Reverse disabled</string>
+
+    <!-- ================================================================= -->
+    <!-- fragment_history.xml Layout & Class Strings -->
+    <!-- ================================================================= -->
+    <string name="fragment_history_txt_empty">No history coordinates recorded.</string>
+    <string name="fragment_history_hint_search">Search logged spots...</string>
+    <string name="fragment_history_desc_search_submit">Execute Search Filter</string>
+    <string name="fragment_history_desc_voice_search">Voice inputs search filter</string>
+    <string name="fragment_history_desc_empty_indicator">No records indicators</string>
+
+    <!-- HistoryFragment Java Strings -->
+    <string name="history_fragment_toast_deleted">Deleted item.</string>
+    <string name="history_fragment_toast_unstarred">Unstarred, removed from favorites</string>
+    <string name="history_fragment_toast_starred">Starred! Added to favorites</string>
+
+    <!-- ================================================================= -->
+    <!-- fragment_favorites.xml Layout & Class Strings -->
+    <!-- ================================================================= -->
+    <string name="fragment_favorites_txt_empty">No starred favorites saved.</string>
+    <string name="fragment_favorites_hint_search">Search favorite spots...</string>
+    <string name="fragment_favorites_desc_search_submit">Execute Search Filter</string>
+    <string name="fragment_favorites_desc_voice_search">Voice inputs search filter</string>
+    <string name="fragment_favorites_desc_empty_indicator">No records indicators</string>
+
+    <!-- FavoritesFragment Java Strings -->
+    <string name="favorites_fragment_toast_speech_unavailable">Speech Input is not available on this device.</string>
+    <string name="favorites_fragment_toast_selected_set">Selected location set on map.</string>
+    <string name="favorites_fragment_toast_deleted">Deleted item.</string>
+
+    <!-- ================================================================= -->
+    <!-- Settings Screen Class Strings -->
+    <!-- ================================================================= -->
+    <string name="settings_fragment_toast_dev_opts_inaccessible">Developer Options inaccessible on this build.</string>
+    <string name="settings_fragment_toast_applying_theme">Applying Dynamic Colors Theme change...</string>
+
+    <!-- Preferences / Settings Screen Strings -->
+    <string name="pref_cat_theme">Theme Configurations</string>
+    <string name="pref_title_theme">Application Theme</string>
+    <string name="pref_summary_theme">Select standard System, Light, or Dark interfaces</string>
+    <string name="pref_title_dynamic_colors">Dynamic Colors</string>
+    <string name="pref_summary_dynamic_colors">Apply Material You palette based on wallpaper</string>
+    
+    <string name="pref_cat_map_interface">Map &amp; Interface Settings</string>
+    <string name="pref_title_map_style">Default Map Style</string>
+    <string name="pref_summary_map_style">Set the baseline style loaded on map</string>
+    <string name="pref_title_screen_awake">Keep Screen Awake</string>
+    <string name="pref_summary_screen_awake">Prevent display from sleeping while map is active</string>
+    <string name="pref_title_traffic">Display Live Traffic</string>
+    <string name="pref_summary_traffic">Overlay real-time traffic updates on map</string>
+    <string name="pref_title_buildings">3D Buildings Geometry</string>
+    <string name="pref_summary_buildings">Render textured 3D buildings where available</string>
+    <string name="pref_title_compass">Show Interactive Compass</string>
+    <string name="pref_summary_compass">Display directional compass HUD on map</string>
+    
+    <string name="pref_cat_service">Service Behavior</string>
+    <string name="pref_title_auto_start">Auto-start on boot</string>
+    <string name="pref_summary_auto_start">Launch service automatically after restart</string>
+    <string name="pref_title_auto_restore">Auto-restore last location</string>
+    <string name="pref_summary_auto_restore">Start service at last mock coordinate</string>
+    <string name="pref_title_diagnostic_logs">Diagnostic Logs</string>
+    <string name="pref_summary_diagnostic_logs">Keep system logging trace files on storage</string>
+    
+    <string name="pref_cat_dev">Development &amp; Diagnostics</string>
+    <string name="pref_title_dev_opts">Device Developer Settings</string>
+    <string name="pref_summary_dev_opts">Open system shortcut to enable mock providers</string>
+    
+    <string name="pref_cat_about">About Application</string>
+    <string name="pref_title_about">About Developer</string>
+    <string name="pref_summary_about">Developer: Amir Muawiya / Pro Mock Location Suite</string>
+
+    <!-- MockLocationService Notification Strings -->
+    <string name="notification_mock_paused">Paused</string>
+    <string name="notification_mock_running">Running</string>
+    <string name="notification_title_active">Mocking GPS Active</string>
+    <string name="notification_spot_prefix">Active Spot: %s</string>
+    <string name="notification_coords_fmt">Coordinates: %1$.6f, %2$.6f</string>
+    <string name="notification_speed_bearing_fmt">Speed: %1$.1f m/s | Bearing: %2$.0f°</string>
+    <string name="notification_status_fmt">Status: Mocking %s</string>
+    <string name="notification_btn_resume">Resume</string>
+    <string name="notification_btn_pause">Pause</string>
+    <string name="notification_btn_stop">Stop Service</string>
+    <string name="notification_channel_name">Mock GPS Injection Service</string>
+    <string name="notification_channel_desc">Shows active spoofing coordinate variables and controls.</string>
+
+    <!-- Theme Selection Arrays -->
+    <string-array name="theme_entries">
+        <item>System Settings Theme</item>
+        <item>Light Style Theme</item>
+        <item>Dark Style Theme</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>system</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <!-- Map Styles Selection Arrays -->
+    <string-array name="map_style_entries">
+        <item>Normal / Standard Mode</item>
+        <item>Satellite Mode</item>
+        <item>Terrain Mode</item>
+        <item>Hybrid Mode</item>
+    </string-array>
+    <string-array name="map_style_values">
+        <item>normal</item>
+        <item>satellite</item>
+        <item>terrain</item>
+        <item>hybrid</item>
+    </string-array>
+</resources>
